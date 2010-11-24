@@ -1,0 +1,27 @@
+<h1>Listing diaries</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @diaries.each do |diary| %>
+  <tr>
+    <td><%= diary.title %></td>
+    <td><%= diary.user_id %></td>
+    <td><%= diary.comment %></td>
+    <td><%= link_to 'Show', diary %></td>
+    <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
+    <td><%= link_to 'Destroy', diary, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Diary', new_diary_path %>
