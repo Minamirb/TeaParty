@@ -11,12 +11,15 @@ body {
 #side {
 	background-color: green;
   float: left;
-	width: 190px; }
+	width: 200px; }
   #side #menu1 {
-		margin-left: 10px; }
+  	 }
   #side #menu2 {
-		margin-left: 10px;
-		margin-top: 50px; }
+  	margin-left: 10px;
+		margin-top: 40px; }
+  #side #menu3 {
+  	margin-left: 10px;
+		margin-top: 250px; }
 
 #main {
   float: left; }
@@ -27,20 +30,13 @@ h1 {
   font-size: 23px; }
 
 table {
-  border: 1px solid #000059;
+  border: 0;
   empty-cells: show; }
-
 th {
-  border: 1px solid #000059;
+  border: 0;
   padding: 2px 5px 2px 5px; }
-
-tr.odd {
-  background-color: #fff; }
-tr.even {
-  background-color: #FFE3E3; }
-
 td {
-  border: 1px solid #000059;
+  border: 0;
   padding: 2px 4px 2px 4px; }
 
 img {
