@@ -9,7 +9,6 @@ body {
 	height: 100px;}
 
 #side {
-	background-color: green;
   float: left;
 	width: 200px; }
   #side #menu1 {
@@ -22,6 +21,8 @@ body {
 		margin-top: 250px; }
 
 #main {
+	margin-left: 30px;
+	margin-top: 15px;
   float: left; }
 
 h1 {

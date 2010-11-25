@@ -51,7 +51,10 @@
 		</div>
 
 		<div id="menu3">
-			管理用
+			管理用メニュー<br>
+			<%= link_to_unless_current 'お店の編集', shops_path %><br>
+			<%= link_to_unless_current 'スケジュールの編集', schedules_path %><br>
+			ユーザー登録
 		</div>
 	</div>
 
