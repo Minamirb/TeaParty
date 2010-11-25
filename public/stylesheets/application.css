@@ -5,7 +5,7 @@ body {
 
 #top {
 	margin: 0;
-	background-color: gray;
+	background: url(/images/p01.gif) no-repeat right bottom;
 	height: 100px;}
 
 #side {
