@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
+	
 <head>
-  <title>TeaParty</title>
+	<meta content="text/html;charset=UTF-8" http-equiv="content-type" />
+  <title>Minami.rb cafe diary</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+	<div id="top">
+		Minami.rb cafe diary
+	</div>
+	
+	<div id="side">
+		<div id="menu1">
+			calender
+		</div>
+
+		<div id="menu2">
+			recent comment
+		</div>
+	</div>
+
+	<div id="main">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
