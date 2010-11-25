@@ -7,6 +7,8 @@ TeaParty::Application.routes.draw do
 
   resources :diaries
 
+  root :to => 'root#menu'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
