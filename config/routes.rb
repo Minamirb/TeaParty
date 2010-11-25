@@ -1,4 +1,6 @@
 TeaParty::Application.routes.draw do
+  get "root/menu"
+
   resources :schedules
 
   resources :shops
