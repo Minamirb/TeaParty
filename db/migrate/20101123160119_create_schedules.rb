@@ -4,7 +4,6 @@ class CreateSchedules < ActiveRecord::Migration
       t.string :title
       t.date :start_date
       t.date :end_date
-      t.integer :shop_id
 
       t.timestamps
     end
