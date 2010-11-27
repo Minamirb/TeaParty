@@ -18,10 +18,9 @@
     <td><%= link_to schedule.title, schedule %></td>
     <td><%= schedule.start_date %></td>
     <td><%= schedule.end_date %></td>
-    <td><%= schedule.shop_id %></td>
-    <td><%= link_to 'Show', schedule %></td>
-    <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-    <td><%= link_to 'Destroy', schedule, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= schedule.shop.name %></td>
+    <td><%= link_to '更新', edit_schedule_path(schedule) %></td>
+    <td><%= link_to '削除', schedule, :confirm => 'ホントに削除する?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
