@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+#title {
+	margin-left: 0px;
+	float: left;
+	font-size: medium;
+	width: 150px; }
+#date {
+	padding-left: 10px;
+	float: left;
+	width: 150px; }
+#shop {
+	float: left;
+	width: 300px; }
+
+
+h1 {
+  padding-top: 20px;
+  margin-top: 0;
+  font-size: 23px; }
+
+table {
+  empty-cells: show; }
+th {
+  border: 0;
+  padding: 2px 5px 2px 5px; }
+td {
+  border: 0;
+  padding: 2px 4px 2px 4px; }

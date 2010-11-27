@@ -1,24 +1,23 @@
+<%= stylesheet_link_tag "schedule" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
+<div id='title'>
   <%= @schedule.title %>
-</p>
+</div>
 
-<p>
-  <b>Start date:</b>
-  <%= @schedule.start_date %>
-</p>
+<div id='date'>
+  <%= @schedule.start_date.strftime("%Y/%m/%d") %> -
+  <%= @schedule.end_date.strftime("%m/%d") %>
+</div>
 
-<p>
-  <b>End date:</b>
-  <%= @schedule.end_date %>
-</p>
-
-<p>
-  <b>Shop:</b>
+<div id='shop'>
+  ＠
   <%= @schedule.shop.name %>
-</p>
+</div>
+
+<div>
+		<%= image_tag('/images/p03.gif', :height => '35px') %>	<%= image_tag('/images/p03.gif', :height => '35px') %>
+</div>
 
 	<div>
 		<%= link_to '日記を書く', new_schedule_diary_path(@schedule) %>
@@ -26,14 +25,17 @@
 
 <br>
 	<div>
-		みんなの日記
 		<% if @schedule.diaries %>
 		  <% @schedule.diaries.each do |diary| %>
-		    <li><%= diary.title %>
-						<%= diary.user_id %>
-						<%= diary.comment %>
-		        <%= diary.created_at.strftime("%m/%d") %>
-	      </li>
+				<table width="250" bgcolor="#CCFFCC">
+				<tr>
+				<td style="border-style:dashed; border-color:#ffffff; border-width:2px;">
+			    <%= diary.title %>
+					<%= diary.user_id %>
+	        <%= diary.created_at.strftime("%m/%d-%H:%M") %>
+					<br>
+					<%= diary.comment %>
+				</td></tr></table>
 	    <% end %>
 		<% end %>
 	</div>
