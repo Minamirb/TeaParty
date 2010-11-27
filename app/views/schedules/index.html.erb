@@ -1,5 +1,7 @@
-<h1>Listing schedules</h1>
+<h1>Schedule</h1>
 
+<div align="center">
+	<table width="600">
 <table>
   <tr>
     <th>Title</th>
@@ -13,7 +15,7 @@
 
 <% @schedules.each do |schedule| %>
   <tr>
-    <td><%= schedule.title %></td>
+    <td><%= link_to schedule.title, schedule %></td>
     <td><%= schedule.start_date %></td>
     <td><%= schedule.end_date %></td>
     <td><%= schedule.shop_id %></td>
@@ -26,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Schedule', new_schedule_path %>
+<%= link_to 'Scheduleを追加', new_schedule_path %>

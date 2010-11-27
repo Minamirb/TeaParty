@@ -20,6 +20,23 @@
   <%= @schedule.shop_id %>
 </p>
 
+	<div>
+		<%= link_to '日記を書く', new_schedule_diary_path(@schedule) %>
+	</div>
 
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>
+<br>
+	<div>
+		みんなの日記
+		<% if @schedule.diaries %>
+		  <% @schedule.diaries.each do |diary| %>
+		    <li><%= diary.title %>
+						<%= diary.user_id %>
+						<%= diary.comment %>
+		        <%= diary.created_at.strftime("%m/%d") %>
+	      </li>
+	    <% end %>
+		<% end %>
+	</div>
+
+<br>
+<%= link_to 'TopPage', root_menu_path %>

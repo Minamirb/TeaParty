@@ -1,4 +1,4 @@
-<%= form_for(@diary) do |f| %>
+<%= form_for([@schedule, @diary]) do |f| %>
   <% if @diary.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
@@ -10,6 +10,13 @@
       </ul>
     </div>
   <% end %>
+	
+	<div>
+		<%= @schedule.title %>
+		<%= @schedule.start_date %>
+		<%= @schedule.end_date %>
+		<%= @schedule.shop.name %>
+	</div>
 
   <div class="field">
     <%= f.label :title %><br />

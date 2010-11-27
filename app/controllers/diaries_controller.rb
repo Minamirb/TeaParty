@@ -24,6 +24,7 @@ class DiariesController < ApplicationController
   # GET /diaries/new
   # GET /diaries/new.xml
   def new
+    @schedule = Schedule.find(params[:schedule_id])
     @diary = Diary.new
 
     respond_to do |format|
@@ -40,11 +41,12 @@ class DiariesController < ApplicationController
   # POST /diaries
   # POST /diaries.xml
   def create
+    @schedule = Schedule.find(params[:schedule_id])
     @diary = Diary.new(params[:diary])
 
     respond_to do |format|
       if @diary.save
-        format.html { redirect_to(@diary, :notice => 'Diary was successfully created.') }
+        format.html { redirect_to(@schedule) }
         format.xml  { render :xml => @diary, :status => :created, :location => @diary }
       else
         format.html { render :action => "new" }

@@ -44,7 +44,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html { redirect_to(@shop, :notice => 'Shop was successfully created.') }
+        format.html { redirect_to(shops_path) }
         format.xml  { render :xml => @shop, :status => :created, :location => @shop }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.update_attributes(params[:shop])
-        format.html { redirect_to(@shop, :notice => 'Shop was successfully updated.') }
+        format.html { redirect_to(shops_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -3,4 +3,4 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 app/views/*/.tmp*
-public/images/p01.gif
+public/images/p*

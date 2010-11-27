@@ -1,3 +1,4 @@
 class Schedule < ActiveRecord::Base
-  has_many :diarys, :class_name => 'Diary'
+  belongs_to :shop
+  has_many :diaries, :class_name => 'Diary'
 end

@@ -44,7 +44,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.save
-        format.html { redirect_to(@schedule, :notice => 'Schedule was successfully created.') }
+        format.html { redirect_to(schedules_path) }
         format.xml  { render :xml => @schedule, :status => :created, :location => @schedule }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
-        format.html { redirect_to(@schedule, :notice => 'Schedule was successfully updated.') }
+        format.html { redirect_to(schedules_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
