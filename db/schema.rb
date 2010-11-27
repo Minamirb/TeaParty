@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20101127012619) do
     t.string   "title"
     t.integer  "user_id"
     t.string   "comment"
+    t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "schedule_id"
@@ -25,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20101127012619) do
     t.string   "title"
     t.date     "start_date"
     t.date     "end_date"
-    t.integer  "shop_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20101127012619) do
     t.string   "name"
     t.string   "url"
     t.string   "address"
+    t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
