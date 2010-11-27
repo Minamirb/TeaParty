@@ -42,7 +42,7 @@ class DiariesController < ApplicationController
   # POST /diaries.xml
   def create
     @schedule = Schedule.find(params[:schedule_id])
-    @diary = Diary.new(params[:diary])
+    @diary = @schedule.diaries.new(params[:diary])
 
     respond_to do |format|
       if @diary.save
