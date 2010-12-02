@@ -10,15 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127140102) do
+ActiveRecord::Schema.define(:version => 20101127144930) do
 
   create_table "diaries", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
     t.string   "comment"
-    t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "schedule_id"
   end
 
   create_table "schedules", :force => true do |t|
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(:version => 20101127140102) do
     t.string   "url"
     t.string   "address"
     t.integer  "schedule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

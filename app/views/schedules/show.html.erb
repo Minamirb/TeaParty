@@ -27,11 +27,11 @@
 	<div>
 		<% if @schedule.diaries %>
 		  <% @schedule.diaries.each do |diary| %>
-				<table width="250" bgcolor="#CCFFCC">
+				<table width="350" bgcolor="#CCFFCC">
 				<tr>
 				<td style="border-style:dashed; border-color:#ffffff; border-width:2px;">
 			    <%= diary.title %>
-					<%= diary.user_id %>
+					<%= diary.user.name %>
 	        <%= diary.created_at.strftime("%m/%d-%H:%M") %>
 					<br>
 					<%= diary.comment %>
