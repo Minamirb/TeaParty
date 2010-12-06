@@ -87,11 +87,13 @@ function makeContent(name) {
   var title = document.getElementById('schedule_title').value;
   var date = document.getElementById('schedule_start_date').value;
   var url = document.getElementById('schedule_shop_url').value;
+  var id = document.getElementById('schedule_id').value;
  
     
   var content = '<h2>' + title + '</h2> <br/>' +
     '実施日:' + date + '<br/>' +
     '場所:' + '<a href="'+ url + '">' + name + '</a> <br/>' +
+    '詳細:' + '<a href="/schedules/'+ id +'">' + 'schedule' + '</a> <br/>' +
     '<input type="submit" value="日記へ" onclick="next()">';
 
    return content;
@@ -109,6 +111,7 @@ function next() {
   <div style="display:none;">
   <%= submit_tag %>
   </div>
+  <%= f.hidden_field :id %>
   <%= f.hidden_field :title %>
   <%= f.hidden_field :start_date %>
   <%= f.fields_for @schedule.shop do |sf| %>
