@@ -27,7 +27,7 @@
 			<td><%= Date.today %></td>
 			<table cellspacing="0" >
 			<tr>
-			  <% ["日", "月", "火", "水", "木", "金", "土"].each do |wday| %>
+			  <% @wdays.each do |wday| %>
 			    <td><%= wday%></td>
 			  <% end %>
 			</tr>

@@ -2,8 +2,9 @@
 class RootController < ApplicationController
   def menu
 
-    @schedule = Schedule.find(:first, :order=> "id desc")  
+    @schedule  = Schedule.find(:first, :order=> "id desc")  
     @calendars = set_calendar
+    @wdays     = set_weeks
     
     if @schedule.nil?
       set_default
@@ -20,6 +21,10 @@ class RootController < ApplicationController
     @schedule.shop = Shop.new(:name=>"Minami.rb", :url=>"http://qwik.jp/minamirb/",
                :address=>"大阪府大阪市中央区難波二丁目")
     @schedule
+  end
+
+  def set_weeks
+    ["日", "月", "火", "水", "木", "金", "土"]
   end
   
   def set_calendar
@@ -51,6 +56,5 @@ class RootController < ApplicationController
     days << weeks
     
     days
-    #["日", "月", "火", "水", "木", "金", "土"]
   end
 end
