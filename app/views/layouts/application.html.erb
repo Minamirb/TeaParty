@@ -27,12 +27,12 @@
 			<td><%= Date.today %></td>
 			<table cellspacing="0" >
 			<tr>
-			  <% @wdays.each do |wday| %>
+			  <% @calendar_wdays.each do |wday| %>
 			    <td><%= wday%></td>
 			  <% end %>
 			</tr>
 			
-			<% @calendars.each do |week| %>
+			<% @calendar_days.each do |week| %>
 			    <tr>
 			      <% week.each do |day| %>
 				<td><%= day%></td>
