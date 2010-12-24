@@ -21,7 +21,7 @@ class ShopsControllerTest < ActionController::TestCase
       post :create, :shop => @shop.attributes
     end
 
-    assert_redirected_to shop_path(assigns(:shop))
+    assert_redirected_to shops_path
   end
 
   test "should show shop" do
@@ -36,7 +36,7 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should update shop" do
     put :update, :id => @shop.to_param, :shop => @shop.attributes
-    assert_redirected_to shop_path(assigns(:shop))
+    assert_redirected_to shops_path
   end
 
   test "should destroy shop" do

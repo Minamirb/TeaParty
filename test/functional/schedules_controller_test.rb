@@ -21,7 +21,7 @@ class SchedulesControllerTest < ActionController::TestCase
       post :create, :schedule => @schedule.attributes
     end
 
-    assert_redirected_to schedule_path(assigns(:schedule))
+    assert_redirected_to schedules_path
   end
 
   test "should show schedule" do
@@ -36,7 +36,7 @@ class SchedulesControllerTest < ActionController::TestCase
 
   test "should update schedule" do
     put :update, :id => @schedule.to_param, :schedule => @schedule.attributes
-    assert_redirected_to schedule_path(assigns(:schedule))
+    assert_redirected_to schedules_path
   end
 
   test "should destroy schedule" do

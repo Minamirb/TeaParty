@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  user_id: 1
+  user: one
   comment: MyString
   schedule: one
 
 two:
   title: MyString
-  user_id: 1
+  user: one
   comment: MyString
   schedule: two
