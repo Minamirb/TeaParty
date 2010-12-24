@@ -4,8 +4,10 @@ one:
   title: MyString
   user_id: 1
   comment: MyString
+  schedule: one
 
 two:
   title: MyString
   user_id: 1
   comment: MyString
+  schedule: two

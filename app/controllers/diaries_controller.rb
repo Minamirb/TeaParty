@@ -1,4 +1,6 @@
 class DiariesController < ApplicationController
+  before_filter :current_schedule
+
   # GET /diaries
   # GET /diaries.xml
   def index
@@ -38,48 +40,28 @@ class DiariesController < ApplicationController
     @diary = Diary.find(params[:id])
   end
 
-  # POST /diaries
-  # POST /diaries.xml
   def create
-    @schedule = Schedule.find(params[:schedule_id])
-    @diary = @schedule.diaries.new(params[:diary])
-
-    respond_to do |format|
-      if @diary.save
-        format.html { redirect_to(@schedule) }
-        format.xml  { render :xml => @diary, :status => :created, :location => @diary }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @diary.errors, :status => :unprocessable_entity }
-      end
-    end
+    @diary = current_schedule.diaries.new(params[:diary])
+    success = @diary.save
+    respond_with([@diary.schedule, @diary])
   end
 
-  # PUT /diaries/1
-  # PUT /diaries/1.xml
   def update
-    @diary = Diary.find(params[:id])
+    @diary = current_schedule.diaries.find(params[:id])
+    @diary.update_attributes(params[:diary])
+    respond_with([@diary.schedule, @diary])
+  end
 
-    respond_to do |format|
-      if @diary.update_attributes(params[:diary])
-        format.html { redirect_to(@diary, :notice => 'Diary was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @diary.errors, :status => :unprocessable_entity }
-      end
+  def destroy
+    @diary = current_schedule.diaries.find(params[:id])
+    msg = (@diary.destroy) ? {:notice => 'success'} : {:alert => 'failure'}
+    respond_with(@diary) do |f|
+      f.html{ redirect_to(schedule_diaries_url, msg) }
     end
   end
 
-  # DELETE /diaries/1
-  # DELETE /diaries/1.xml
-  def destroy
-    @diary = Diary.find(params[:id])
-    @diary.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(diaries_url) }
-      format.xml  { head :ok }
-    end
+  private
+  def current_schedule
+    @schedule ||= Schedule.find(params[:schedule_id])
   end
 end

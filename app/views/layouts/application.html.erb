@@ -10,17 +10,11 @@
 </head>
 
 <body>
-	<div id="top">
-		<br>
-		<%= image_tag('/images/minamirbcafediary.gif', :height => '80px') %>
+	<div id="header">
+		<%= link_to image_tag('minamirbcafediary.gif', :height => '80px'), root_path, :id => 'logo' %>
 	</div>
 	
 	<div id="side">
-		<div id="toplink">
-			<%= link_to image_tag('/images/p02.gif'), root_menu_path %>
-			<%= link_to 'Top Page', root_menu_path %>
-		</div>
-		
 		<div id="menu1" align="center">
 			<br>
 			<br>

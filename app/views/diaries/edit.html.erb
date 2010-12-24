@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @diary %> |
-<%= link_to 'Back', diaries_path %>
+<%= link_to 'Show', [@diary.schedule, @diary] %> |
+<%= link_to 'Back', schedule_diaries_path(@diary.schedule) %>

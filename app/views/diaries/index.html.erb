@@ -15,13 +15,13 @@
     <td><%= diary.title %></td>
     <td><%= diary.user_id %></td>
     <td><%= diary.comment %></td>
-    <td><%= link_to 'Show', diary %></td>
-    <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-    <td><%= link_to 'Destroy', diary, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [diary.schedule, diary] %></td>
+    <td><%= link_to 'Edit', edit_schedule_diary_path(diary.schedule, diary) %></td>
+    <td><%= link_to 'Destroy', [diary.schedule, diary], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Diary', new_diary_path %>
+<%= link_to 'New Diary', new_schedule_diary_path(@schedule) %>
