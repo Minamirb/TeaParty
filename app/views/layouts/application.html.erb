@@ -54,6 +54,8 @@
 	<div id="main">
 		<%= yield %>
 	</div>
-
+<% @javascripts.each do |js| -%>
+  <%= javascript_include_tag js %>
+<% end -%>
 </body>
 </html>

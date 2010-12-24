@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   #helper :application
   include ApplicationHelper
   before_filter :set_calendar
+  before_filter { @javascripts = [] }
   
   def set_calendar
     @calendar_wdays = set_weeks
