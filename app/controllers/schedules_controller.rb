@@ -25,6 +25,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new.xml
   def new
     @schedule = Schedule.new
+    @shops = Shop.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/1/edit
   def edit
     @schedule = Schedule.find(params[:id])
+    @shops = Shop.all
   end
 
   # POST /schedules
