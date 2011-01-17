@@ -23,17 +23,9 @@
     <%= f.label :end_date %><br />
     <%= f.date_select :end_date %>
   </div>
-  <!-- <div class="field"> -->
-  <!--   <%= f.label :shop_id %><br /> -->
-  <!--   <%= f.text_field :shop_id %> -->
-  <!-- </div> -->
   <div class="field">
     <%= f.label :shop_id %><br />
-    <select id="schedule_shop_id" name="schedule[shop][id]" tabindex="3">
-      <% @shops.each do |shop| %>
-	<option value="<%= shop.id %>"><%= shop.id%></option>
-      <% end %>
-    </select>
+    <%= f.select :shop_id, @shops.map{|shop| [shop.name,shop.id] } %>
   </div>
   <div class="actions">
     <%= f.submit %>
