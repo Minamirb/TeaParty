@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :shop_id %><br />
-    <%= f.select :shop_id, @shops.map{|shop| [shop.name,shop.id] } %>
+    <%= f.select :shop_id, @registered_shops %>
   </div>
   <div class="actions">
     <%= f.submit %>

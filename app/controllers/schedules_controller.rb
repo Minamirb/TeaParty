@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+  before_filter :check_shop #, :only => { :new, :edit }
+
   # GET /schedules
   # GET /schedules.xml
   def index
@@ -80,6 +82,14 @@ class SchedulesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(schedules_url) }
       format.xml  { head :ok }
+    end
+  end
+
+private
+  def check_shop
+    @registered_shops = Shop.all.map{|shop| [shop.name, shop.id] }
+    if @registered_shops.empty?
+      #redirect shop register page
     end
   end
 end
