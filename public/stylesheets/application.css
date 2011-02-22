@@ -4,10 +4,7 @@ body {
   margin: 0;
 	width: 950px; }
 
-#top {
-	margin: 0;
-	background: url(/images/p01.gif) no-repeat right bottom;
-	height: 100px;}
+#top { }
 
 #side {
   float: left;

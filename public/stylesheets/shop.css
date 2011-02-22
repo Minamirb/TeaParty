@@ -3,10 +3,7 @@ body {
   font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
   margin: 0; }
 
-#top {
-	margin: 0;
-	background: url(/images/p01.gif) no-repeat right bottom;
-	height: 100px;}
+#top { }
 
 h1 {
   padding-top: 20px;
